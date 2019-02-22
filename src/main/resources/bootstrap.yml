@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: security
+  profiles:
+    active: development
+  cloud:
+    config:
+      uri: ${uri.config:http://config-server:5500}

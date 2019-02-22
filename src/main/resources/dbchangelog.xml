@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1-security" author="hhernandez">
+
+        <createTable tableName="empresa">
+            <column name="id_empresa" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="codigo" type="integer">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="empresa">
+            <column name="id_empresa" value="1"/>
+            <column name="codigo" value="1"/>
+            <column name="nombre" value="Liceo Mixto Panamericano"/>
+        </insert>
+        <insert tableName="empresa">
+            <column name="id_empresa" value="2"/>
+            <column name="codigo" value="2"/>
+            <column name="nombre" value="Instituto Tecnico Laboral Kinal"/>
+        </insert>
+
+        <createTable tableName="iconos">
+            <column name="id_icono" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="clase" type="varchar(50)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+        <insert tableName="iconos">
+            <column name="id_icono" value="1"></column>
+            <column name="nombre" value="Book user"></column>
+            <column name="clase" value="fa-address-book"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="2"></column>
+            <column name="nombre" value="Address card"></column>
+            <column name="clase" value="fa-address-card"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="3"></column>
+            <column name="nombre" value="Adjust"></column>
+            <column name="clase" value="fa-adjust"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="4"></column>
+            <column name="nombre" value="Align Center"></column>
+            <column name="clase" value="fa-align-center"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="5"></column>
+            <column name="nombre" value="Aling Justify"></column>
+            <column name="clase" value="fa-align-justify"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="6"></column>
+            <column name="nombre" value="Align left"></column>
+            <column name="clase" value="fa-align-left"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="7"></column>
+            <column name="nombre" value="Align right"></column>
+            <column name="clase" value="fa-align-right"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="8"></column>
+            <column name="nombre" value="Amazon"></column>
+            <column name="clase" value="fa-amazon"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="9"></column>
+            <column name="nombre" value="Ambulance"></column>
+            <column name="clase" value="fa-ambulance"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="10"></column>
+            <column name="nombre" value="Archive"></column>
+            <column name="clase" value="fa-archive"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="11"></column>
+            <column name="nombre" value="Area Archive"></column>
+            <column name="clase" value="fa-area-chart"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="12"></column>
+            <column name="nombre" value="Asterisk"></column>
+            <column name="clase" value="fa-asterisk"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="13"></column>
+            <column name="nombre" value="Automobile"></column>
+            <column name="clase" value="fa-automobile"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="14"></column>
+            <column name="nombre" value="Ban"></column>
+            <column name="clase" value="fa-ban"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="15"></column>
+            <column name="nombre" value="Bank"></column>
+            <column name="clase" value="fa-bank"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="16"></column>
+            <column name="nombre" value="Bar chart"></column>
+            <column name="clase" value="fa-bar-chart"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="17"></column>
+            <column name="nombre" value="Bell"></column>
+            <column name="clase" value="fa-bell-o"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="18"></column>
+            <column name="nombre" value="Birthday"></column>
+            <column name="clase" value="fa-birthday-cake"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="19"></column>
+            <column name="nombre" value="Book"></column>
+            <column name="clase" value="fa-book"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="20"></column>
+            <column name="nombre" value="Bullhorn"></column>
+            <column name="clase" value="fa-bullhorn"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="21"></column>
+            <column name="nombre" value="Bus"></column>
+            <column name="clase" value="fa-bus"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="22"></column>
+            <column name="nombre" value="Calendar"></column>
+            <column name="clase" value="fa-calendar"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="23"></column>
+            <column name="nombre" value="Camera"></column>
+            <column name="clase" value="fa-camera"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="24"></column>
+            <column name="nombre" value="Visa"></column>
+            <column name="clase" value="fa-cc-visa"></column>
+        </insert>
+        <insert tableName="iconos">
+            <column name="id_icono" value="25"></column>
+            <column name="nombre" value="Configuration"></column>
+            <column name="clase" value="fa-cog"></column>
+        </insert>
+
+        <createTable tableName="opciones">
+            <column name="id_opciones" type="integer" autoIncrement="true" incrementBy="1" startWith="0">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="descripcion" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="path" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="opciones">
+            <column name="id_opciones" value="1"></column>
+            <column name="descripcion" value="Opcion Default"></column>
+            <column name="path" value="/"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="2"></column>
+            <column name="descripcion" value="Inicio"></column>
+            <column name="path" value="/inicio"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="3"></column>
+            <column name="descripcion" value="Seleccion de Agencias"></column>
+            <column name="path" value="/seleccion"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="4"></column>
+            <column name="descripcion" value="Mant. Estados de Inscripciones"></column>
+            <column name="path" value="/estadosInscripciones"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="5"></column>
+            <column name="descripcion" value="Mant. Periodos"></column>
+            <column name="path" value="/periodos"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="6"></column>
+            <column name="descripcion" value="Mant. Grados"></column>
+            <column name="path" value="/grado"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="7"></column>
+            <column name="descripcion" value="Mant. Inscripciones"></column>
+            <column name="path" value="/inscripciones"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="8"></column>
+            <column name="descripcion" value="Mant. Tipo Menu"></column>
+            <column name="path" value="/tipoMenu"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="9"></column>
+            <column name="descripcion" value="Mant. Menu Principal"></column>
+            <column name="path" value="/menuPrincipal"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="10"></column>
+            <column name="descripcion" value="Mant. Roles"></column>
+            <column name="path" value="/role"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="11"></column>
+            <column name="descripcion" value="Mant. Usuarios"></column>
+            <column name="path" value="/usuario"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="12"></column>
+            <column name="descripcion" value="Asignacion de Agencias"></column>
+            <column name="path" value="/asignarAgencia"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="13"></column>
+            <column name="descripcion" value="Validaciones de Inscripciones"></column>
+            <column name="path" value="/validacionesInscripciones"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="14"></column>
+            <column name="descripcion" value="Mant. Profesiones"></column>
+            <column name="path" value="/profesiones"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="15"></column>
+            <column name="descripcion" value="Mant. Estados Civiles"></column>
+            <column name="path" value="/estadoCivil"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="16"></column>
+            <column name="descripcion" value="Mant. Ocupaciones"></column>
+            <column name="path" value="/ocupacion"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="17"></column>
+            <column name="descripcion" value="Mant. Tipo de Identificacion"></column>
+            <column name="path" value="/tipoIdentificacion"></column>
+        </insert>
+        <insert tableName="opciones">
+            <column name="id_opciones" value="18"></column>
+            <column name="descripcion" value="Mant. Geografia"></column>
+            <column name="path" value="/geografia"></column>
+        </insert>
+
+        <createTable tableName="tipo_menu">
+            <column name="id_tipo_menu" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="codigo" type="integer">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="descripcion" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="tipo_menu">
+            <column name="id_tipo_menu" value="1"></column>
+            <column name="codigo" value="1"></column>
+            <column name="descripcion" value="Menu Root"/>
+        </insert>
+
+        <createTable tableName="menu_principal">
+            <column name="id_menu_principal" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="orden" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_opciones" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_icono" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_tipo_menu" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ejecuta" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="menu_principal"
+                                 baseColumnNames="id_opciones"
+                                 constraintName="fk_menu_principal_opciones"
+                                 referencedTableName="opciones"
+                                 referencedColumnNames="id_opciones"/>
+        <addForeignKeyConstraint baseTableName="menu_principal"
+                                 baseColumnNames="id_icono"
+                                 constraintName="fk_menu_principal_iconos" referencedTableName="iconos"
+                                 referencedColumnNames="id_icono"/>
+        <addForeignKeyConstraint baseTableName="menu_principal"
+                                 baseColumnNames="id_tipo_menu"
+                                 constraintName="fk_menu_principal_tipo_menu"
+                                 referencedTableName="tipo_menu"
+                                 referencedColumnNames="id_tipo_menu"/>
+        <insert tableName="menu_principal">
+            <column name="id_menu_principal" value="1"></column>
+            <column name="orden" value="1"></column>
+            <column name="descripcion" value="Seguridad"></column>
+            <column name="id_opciones" value="1"></column>
+            <column name="id_icono" value="1"></column>
+            <column name="id_tipo_menu" value="1"></column>
+            <column name="ejecuta" value="0"></column>
+        </insert>
+        <insert tableName="menu_principal">
+            <column name="id_menu_principal" value="2"></column>
+            <column name="orden" value="2"></column>
+            <column name="descripcion" value="Parametrizacion"></column>
+            <column name="id_opciones" value="1"></column>
+            <column name="id_icono" value="5"></column>
+            <column name="id_tipo_menu" value="1"></column>
+            <column name="ejecuta" value="0"></column>
+        </insert>
+        <insert tableName="menu_principal">
+            <column name="id_menu_principal" value="3"></column>
+            <column name="orden" value="3"></column>
+            <column name="descripcion" value="Operaciones"></column>
+            <column name="id_opciones" value="1"></column>
+            <column name="id_icono" value="8"></column>
+            <column name="id_tipo_menu" value="1"></column>
+            <column name="ejecuta" value="0"></column>
+        </insert>
+
+        <createTable tableName="menu_secundario">
+            <column name="id_menu_secundario" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="orden" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descripcion" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_opciones" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_menu_principal" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="menu_secundario"
+                                 baseColumnNames="id_opciones"
+                                 constraintName="fk_menu_secundario_opciones"
+                                 referencedTableName="opciones"
+                                 referencedColumnNames="id_opciones"/>
+        <addForeignKeyConstraint baseTableName="menu_secundario"
+                                 baseColumnNames="id_menu_principal"
+                                 constraintName="fk_menu_secundario_menu_principal"
+                                 referencedTableName="menu_principal"
+                                 referencedColumnNames="id_menu_principal"/>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="1"></column>
+            <column name="orden" value="1"></column>
+            <column name="descripcion" value="Asig. Agencias"></column>
+            <column name="id_opciones" value="12"></column>
+            <column name="id_menu_principal" value="1"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="2"></column>
+            <column name="orden" value="2"></column>
+            <column name="descripcion" value="Sel. Agencias"></column>
+            <column name="id_opciones" value="3"></column>
+            <column name="id_menu_principal" value="1"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="3"></column>
+            <column name="orden" value="3"></column>
+            <column name="descripcion" value="Mant. Usuarios"></column>
+            <column name="id_opciones" value="11"></column>
+            <column name="id_menu_principal" value="1"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="4"></column>
+            <column name="orden" value="4"></column>
+            <column name="descripcion" value="Mant. Tipo de Menu"></column>
+            <column name="id_opciones" value="8"></column>
+            <column name="id_menu_principal" value="1"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="5"></column>
+            <column name="orden" value="5"></column>
+            <column name="descripcion" value="Roles"></column>
+            <column name="id_opciones" value="10"></column>
+            <column name="id_menu_principal" value="1"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="6"></column>
+            <column name="orden" value="6"></column>
+            <column name="descripcion" value="Mant. Menu Principal"></column>
+            <column name="id_opciones" value="9"></column>
+            <column name="id_menu_principal" value="1"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="7"></column>
+            <column name="orden" value="1"></column>
+            <column name="descripcion" value="Est. Civiles"></column>
+            <column name="id_opciones" value="15"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="8"></column>
+            <column name="orden" value="2"></column>
+            <column name="descripcion" value="Est. Inscripciones"></column>
+            <column name="id_opciones" value="4"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="9"></column>
+            <column name="orden" value="3"></column>
+            <column name="descripcion" value="Val. Inscripciones"></column>
+            <column name="id_opciones" value="13"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="10"></column>
+            <column name="orden" value="4"></column>
+            <column name="descripcion" value="Grados"></column>
+            <column name="id_opciones" value="6"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="11"></column>
+            <column name="orden" value="5"></column>
+            <column name="descripcion" value="Geografia"></column>
+            <column name="id_opciones" value="18"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="12"></column>
+            <column name="orden" value="6"></column>
+            <column name="descripcion" value="Ocupaciones"></column>
+            <column name="id_opciones" value="16"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="13"></column>
+            <column name="orden" value="7"></column>
+            <column name="descripcion" value="Periodos"></column>
+            <column name="id_opciones" value="5"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="14"></column>
+            <column name="orden" value="8"></column>
+            <column name="descripcion" value="Profesiones"></column>
+            <column name="id_opciones" value="14"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="15"></column>
+            <column name="orden" value="9"></column>
+            <column name="descripcion" value="Tip. Identificaion"></column>
+            <column name="id_opciones" value="17"></column>
+            <column name="id_menu_principal" value="2"></column>
+        </insert>
+        <insert tableName="menu_secundario">
+            <column name="id_menu_secundario" value="16"></column>
+            <column name="orden" value="1"></column>
+            <column name="descripcion" value="Inscripciones"></column>
+            <column name="id_opciones" value="7"></column>
+            <column name="id_menu_principal" value="3"></column>
+        </insert>
+
+        <createTable tableName="role">
+            <column name="id_role" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="codigo" type="integer">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="nombre" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="role">
+            <column name="id_role" value="1"></column>
+            <column name="codigo" value="1"></column>
+            <column name="nombre" value="Root"></column>
+        </insert>
+
+        <createTable tableName="usuario">
+            <column name="id_usuario" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="usuario_app" type="varchar(20)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="pass" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_role" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="estado" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_tipo_menu" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="usuario"
+                                 baseColumnNames="id_role"
+                                 constraintName="fk_usuario_role"
+                                 referencedTableName="role"
+                                 referencedColumnNames="id_role"/>
+        <addForeignKeyConstraint baseTableName="usuario"
+                                 baseColumnNames="id_tipo_menu"
+                                 constraintName="fk_usuario_tipo_menu"
+                                 referencedTableName="tipo_menu"
+                                 referencedColumnNames="id_tipo_menu"/>
+        <insert tableName="usuario">
+            <column name="id_usuario" value="1"></column>
+            <column name="usuario_app" value="root"></column>
+            <column name="pass" value="root"></column>
+            <column name="id_role" value="1"></column>
+            <column name="estado" value="0"></column>
+            <column name="id_tipo_menu" value="1"></column>
+        </insert>
+
+        <createTable tableName="relacion_empresa_usuario">
+            <column name="id_relacion" type="integer" autoIncrement="true" incrementBy="1" startWith="1">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_empresa" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_usuario" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="relacion_empresa_usuario"
+                                 baseColumnNames="id_empresa"
+                                 constraintName="fk_relacion_empresa_usuario_empresa"
+                                 referencedTableName="empresa"
+                                 referencedColumnNames="id_empresa"/>
+        <addForeignKeyConstraint baseTableName="relacion_empresa_usuario"
+                                 baseColumnNames="id_usuario"
+                                 constraintName="fk_relacion_empresa_usuario_usuario"
+                                 referencedTableName="usuario"
+                                 referencedColumnNames="id_usuario"/>
+        <insert tableName="relacion_empresa_usuario">
+            <column name="id_relacion" value="1"></column>
+            <column name="id_empresa" value="1"></column>
+            <column name="id_usuario" value="1"></column>
+        </insert>
+        <insert tableName="relacion_empresa_usuario">
+            <column name="id_relacion" value="2"></column>
+            <column name="id_empresa" value="2"></column>
+            <column name="id_usuario" value="1"></column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
